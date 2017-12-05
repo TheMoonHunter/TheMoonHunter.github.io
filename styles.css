@@ -14,7 +14,7 @@ h1 {
 }
 
 h2 {
-    color: #f7fbff;
+    color: #f66a5c;
 	font-family: 'Georgia', serif;
     font-size: 20px;
     font-style: italic;
@@ -42,7 +42,7 @@ h2::before
 
 h2 span
 {
-  background: #919191; 
+  background: black; 
   padding: 0 10px; 
 }
 
@@ -69,7 +69,6 @@ h2 span
     overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
     float: left;
     color: #f2f2f2;
@@ -79,13 +78,11 @@ h2 span
     font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
     background-color: #ddd;
     color: black;
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
