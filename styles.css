@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url('background.jpg');
+  background-image: url('https://c1.staticflickr.com/5/4515/25165919388_87d6cbb420_b.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -137,7 +137,9 @@ h2.background {
 }
 
 .topnav {
-  overflow: hidden;
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
 
 .topnav a {
