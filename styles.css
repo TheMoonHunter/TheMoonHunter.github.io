@@ -3,7 +3,7 @@
   src: url(custom_font.ttf);
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 760px) {
   header {
     width: 100%;
     display: block;
@@ -91,6 +91,7 @@ header {
   width: 1200px;
   height: 40px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 ul li {
@@ -124,7 +125,8 @@ ul li ul {
   display: none;
 }
 
-ul li:hover ul {
+ul li:hover ul,
+ul li:focus ul {
   display: block;
 }
 
