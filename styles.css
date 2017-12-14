@@ -147,13 +147,11 @@ h2.background {
   color: #090a67;
   text-shadow: 2px 2px #c0c0c0;
   text-align: center;
-  padding: 14px 16.95px;
+  padding: 14px 10px;
   text-decoration: none;
   font-size: 20px;
 }
 
 .topnav a:hover {
-  color: #090a67;
-  text-shadow: 2px 2px #ffffff;
-  font-size: 23px;
+  color: #f66a5c;
 }
