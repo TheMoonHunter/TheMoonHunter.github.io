@@ -6,10 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<header>
-		<BUTTON>Menu</BUTTON>
+		<button onclick="myFunction()">Menu</button>
 	</header>
 	<body>
-		<nav class="nav">
+		<nav class="nav" id="main_nav">
 		  <ul>
 			  <li><a href="index.html">Home</a></li>
 			  <li><a href="our-story.html">Our Story</a></li>
@@ -63,3 +63,13 @@
 		</section>
 	</body>
 </html>
+<script type="text/javascript">
+function myFunction() {
+    var x = document.getElementById("main_nav");
+    if (!x.style.display || x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>

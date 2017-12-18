@@ -6,10 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<header>
-		<BUTTON>Menu</BUTTON>
+		<button onclick="myFunction()">Menu</button>
 	</header>
 	<body>
-		<nav class="nav">
+		<nav class="nav" id="main_nav">
 		  <ul>
 			  <li><a href="index.html">Home</a></li>
 			  <li><a href="our-story.html">Our Story</a></li>
@@ -26,10 +26,21 @@
 				  	<li><a href="transportation.html">Transportation</a></li>
 				  </ul>
 			  </li>
+			</ul>
 		</nav>
 		<section class="container">
 			<h1>Paulo and Tiffany</h1>
-			<h2 class="subtitle fancy"><span>August 19, 2018</span></h2>
+			<h2 class="subtitle fancy"><span>Sunday, August 19, 2018</span></h2>
 		</section>
 	</body>
 </html>
+<script type="text/javascript">
+function myFunction() {
+    var x = document.getElementById("main_nav");
+    if (!x.style.display || x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>

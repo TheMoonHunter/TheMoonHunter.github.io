@@ -21,21 +21,28 @@ body {
     float: none;
   }
 
-  nav {
-    width: 100%;
-    padding: 0 auto;
-    float: none;
-  }
-
   header {
     width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  button {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    padding: 5px 40px;
+    margin-bottom: 10px;
+    text-align: center;
   }
 
   h1 {
     font-size: 40px;
     font-weight: 100;
   }
-
 
   h2 {
     margin-top: 30px;
@@ -56,31 +63,41 @@ body {
 
   .nav {
     width: 100%;
-    height: auto;
+    flex-wrap: wrap;
+  }
+
+  #main_nav {
+    display: none;
+  }
+
+  ul {
+    width: 100%;
     margin: 0;
+    padding-left: 10px;
+    padding-right: 20px;
   }
 
   ul li {
-    width: 100%;
     float: none;
     line-height: 40px;
   }
 
   ul li a {
-    width: 100%;
     display: block;
     height: 40px;
     float: none;
   }
 
+  ul li ul {
+    margin-left: -10px;
+  }
+
   ul li ul li {
-    width: 100%;
     position: static;
   }
 
   ul li:hover ul,
   ul li:focus ul {
-    width: 100%;
     display: block;
     position: relative;
   }
@@ -132,6 +149,7 @@ body {
   h1 {
     font-size: 100px;
     font-weight: 100;
+    padding-top: 20px;
   }
 
   .changeSize {
@@ -149,9 +167,8 @@ body {
   }
 
   header {
-    width: 1200px;
-    height: 20px;
-    margin: 0 auto;
+    position: relative;
+    display: none;
   }
 
   .container {
@@ -169,15 +186,24 @@ body {
   }
 
   .nav {
+    justify-content: center;
     width: 1200px;
     height: 40px;
     margin: 0 auto;
+  }
+
+  #main_nav {
+    display: flex;
   }
 
   ul li {
     width: 110px;
     line-height: 40px;
     float: left;
+  }
+
+  ul li ul {
+    margin-left: -40px;
   }
 
   ul li a {
@@ -268,13 +294,8 @@ h2 {
   white-space: nowrap;
 }
 
-header {
-  position: relative;
-  display: none;
-}
-
 .nav {
-  cursor: pointer;
+  display: flex;
 }
 
 ul li {
@@ -296,7 +317,6 @@ ul li a:hover {
 
 ul li ul {
   position: absolute;
-  margin-left: -40px;
   display: none;
 }
 
