@@ -135,13 +135,13 @@ body {
   .fancy span:before {
     height: 5px;
     top: 0;
-    width: 85%;
+    width: 70%;
   }
 
   .fancy span:after {
     height: 5px;
     top: 0;
-    width: 80%;
+    width: 65%;
   }
 }
 
