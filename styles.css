@@ -115,12 +115,12 @@ body {
   .nofancy span:before {
     height: 5px;
     top: 0;
-    width: 100%;
+    width: 160px;
   }
   .nofancy span:after {
     height: 5px;
     top: 0;
-    width: 100%;
+    width: 160px;
   }
 
   .fancy {
@@ -135,13 +135,13 @@ body {
   .fancy span:before {
     height: 5px;
     top: 0;
-    width: 100%;
+    width: 85%;
   }
 
   .fancy span:after {
     height: 5px;
     top: 0;
-    width: 100%;
+    width: 80%;
   }
 }
 
