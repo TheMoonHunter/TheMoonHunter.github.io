@@ -4,10 +4,8 @@
 }
 
 body {
-  background-image: url('https://c1.staticflickr.com/5/4515/25165919388_87d6cbb420_b.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  background: url('https://c1.staticflickr.com/5/4515/25165919388_87d6cbb420_b.jpg') no-repeat center center fixed;
+  position: relative;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
