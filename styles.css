@@ -37,6 +37,8 @@ body {
     padding: 5px 40px;
     margin-bottom: 10px;
     text-align: center;
+    background: gba(255, 255, 255, .6);
+    border-radius: 10px;
   }
 
   h1 {
@@ -70,6 +72,11 @@ body {
     display: none;
   }
 
+  #info {
+    display: none;
+    position: relative;
+  }
+
   ul {
     width: 100%;
     margin: 0;
@@ -94,12 +101,6 @@ body {
 
   ul li ul li {
     position: static;
-  }
-
-  ul li:hover ul,
-  ul li:focus ul {
-    display: block;
-    position: relative;
   }
 
   .nofancy {
@@ -197,17 +198,25 @@ body {
   }
 
   ul li {
-    width: 110px;
     line-height: 40px;
     float: left;
+    padding: 0;
   }
 
   ul li ul {
-    margin-left: -40px;
+    margin-left: -45px;
   }
 
   ul li a {
-    width: 110px;
+    width: auto;
+    margin-right: 15px;
+    margin-left: 15px;
+    height: 40px;
+  }
+
+  ul li ul li a {
+    width: 60px;
+    margin-right: 36.25px;
     height: 40px;
   }
 

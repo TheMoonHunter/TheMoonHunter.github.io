@@ -19,8 +19,8 @@
 			  <li><a href="things-to-do.html">Things To Do</a></li>
 			  <li><a href="song-requests.html">Song Requests</a></li>
 			  <li><a href="photos.html">Photos</a></li>
-			  <li><a>Information</a>
-			  	<ul>
+			  <li><a onclick="showInfo()">Information</a>
+			  	<ul id="info">
 				  	<li><a href="directions.html">Directions</a></li>
 				  	<li><a href="schedule.html">Schedule</a></li>
 				  	<li><a href="transportation.html">Transportation</a></li>
@@ -70,6 +70,14 @@ function myFunction() {
         x.style.display = "flex";
     } else {
         x.style.display = "none";
+    }
+}
+function showInfo() {
+    var info = document.getElementById("info");
+    if (!info.style.display || info.style.display === "none") {
+        info.style.display = "block";
+    } else {
+        info.style.display = "none";
     }
 }
 </script>
