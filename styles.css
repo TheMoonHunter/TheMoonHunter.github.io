@@ -346,6 +346,10 @@ h3 {
   display: flex;
 }
 
+.hide {
+  display: none;
+}
+
 ul li {
   list-style: none;
   position: relative;
