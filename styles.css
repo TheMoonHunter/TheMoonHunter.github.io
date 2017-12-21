@@ -55,15 +55,71 @@ body {
     padding-left: 10px;
   }
 
+  h3 {
+    font-size: 16px;
+  }
+
+  label {
+    width: 30%;
+    clear: left;
+    text-align: right;
+    padding-right: 5px;
+    white-space: nowrap;
+    margin-top: 4px;
+    height: 20px;
+  }
+
+  input, label {
+      float: left;
+      padding-left: 5px;
+      font-size: 12px;
+  }
+
+  button.submit {
+    margin-top: 20px;
+    padding-left: 10px;
+    width: 100px;
+    height: 35px;
+    white-space: nowrap;
+  }
+
+  .bodycontainer {
+    width: 100%;
+    height: 300px;
+    margin-right: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, .4);
+  }
+
+  .section {
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+  }
+
   .container {
     width: 100%;
     height: 100px;
     margin: 0 auto;
   }
 
+  .center {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
   .nav {
     width: 100%;
     flex-wrap: wrap;
+  }
+
+  .input {
+    display: inline-block;
+    width: 170px;
   }
 
   #main_nav {
@@ -170,20 +226,32 @@ body {
     clear: left;
     text-align: right;
     padding-right: 10px;
+    margin-top: 2px;
   }
 
   input, label {
       float: left;
   }
 
-  #submit {
-    margin-top: 20px;
-    margin-left: 390px;
-  }
-
   header {
     position: relative;
     display: none;
+  }
+
+  button {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    background: gba(255, 255, 255, .6);
+    border-radius: 10px;
+  }
+
+  button.submit {
+    width: 130px;
+    height: 35px;
+    margin-top: 40px;
   }
 
   .container {
@@ -215,6 +283,14 @@ body {
     width: 1200px;
     height: 40px;
     margin: 0 auto;
+  }
+
+  .center {
+    width: 870.67px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   #main_nav {
@@ -336,6 +412,11 @@ h3 {
   font-family: 'Georgia';
   text-align: center;
   padding-top: 10px;
+}
+
+button.submit {
+  background-color: #090a67;
+  color: #f5f5f5;
 }
 
 .nav {
