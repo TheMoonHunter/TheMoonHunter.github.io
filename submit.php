@@ -11,9 +11,8 @@ $full_name = $_REQUEST['fullname'] ;
 $guest_name = $_REQUEST['guestname'] ;
 
 // Build Message
-$msg = "First Name: " . $first_name . "\r\n" .
-			 "Email: " . $email_address . "\r\n" .
-			 "Comments: " . $comments ;
+$msg = "Full Name:  " . $full_name . "\r\n" .
+			 "Guest Name: " . $guest_name . "\r\n" .
 
 mail( $email, $subject, $msg, $from);
 header( "Location: $thankyou_page" );
