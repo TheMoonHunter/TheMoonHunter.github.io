@@ -12,6 +12,7 @@
     }
   },
   "permissions": [
-    "http://*.google.com/"
+    "http://*.google.com/",
+    "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:A101&output=csv"
   ]
 }
