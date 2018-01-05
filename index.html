@@ -45,7 +45,7 @@ function loadData() {
   var url="https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:A101&output=csv";
   xmlhttp=new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
-    document.getElementById("display").innerText = JSON.parse(xmlhttp.responseText);
+    document.getElementById("display").innerText = xmlhttp.responseText;
   };
   if ("withCredentials" in xmlhttp) {
 	xmlhttp.open("GET", url, true);
