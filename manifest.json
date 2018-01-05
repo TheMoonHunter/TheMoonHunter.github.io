@@ -1,0 +1,17 @@
+{
+  "name": "Paulo and Tiffany's Wedding",
+  "description": "Pithy description (132 characters or less, no HTML)",
+  "version": "0.0.0.1",
+  "manifest_version": 2,
+  "app": {
+    "urls": [
+      "http://pauloandtiffany.com/"
+    ],
+    "launch": {
+      "web_url": "http://pauloandtiffany.com/"
+    }
+  },
+  "permissions": [
+    "http://*.google.com/"
+  ],
+}

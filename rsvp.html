@@ -36,8 +36,8 @@
 			<form class="bodycontainer" action="http://formspree.io/paulo.iza.v@gmail.com" method="post">
 				<h3>You're invited to our wedding! Please RSVP below!</h3><br>
 				<input class="hide" type="email" name="_replyto" value="paulo.iza.v@gmail.com">
-				<label for="fullname">Full Name:</label><input class="input" type="text" name="fullname"><br><br>
-				<label for="guestname">Guest Name:</label><input class="input" type="text" name="guestname"><br><br>
+				<label for="fullname">Full Name:</label><input class="input" id="fullname" type="text" name="fullname"><br><br>
+				<label for="guestname">Guest Name:</label><input class="input" id="guestname" type="text" name="guestname"><br><br>
 				<div class="center">
 					<button class="submit" type="submit">Send RSVP</button>
 				</div>
@@ -62,4 +62,7 @@ function showInfo() {
         info.style.display = "none";
     }
 }
+// document.querySelector("fullname").addEventListener("change",function () {
+//   document.getElementById("fullname").innerHTML = "Hello";
+// })
 </script>
