@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<header>
-		<button onclick="myFunction()">Menu</button>
+		<button onclick="toggleDisplay(`main_nav`)">Menu</button>
 	</header>
 	<body>
 		<nav class="nav" id="main_nav">
@@ -19,7 +19,7 @@
 			  <li><a href="things-to-do.html">Things To Do</a></li>
 			  <li><a href="song-requests.html">Song Requests</a></li>
 			  <li><a href="photos.html">Photos</a></li>
-			  <li><a onclick="showInfo()">Information</a>
+			  <li><a onclick="toggleDisplay(`info`)">Information</a>
 			  	<ul id="info">
 				  	<li><a href="directions.html">Directions</a></li>
 				  	<li><a href="schedule.html">Schedule</a></li>
@@ -36,7 +36,7 @@
 			<form class="bodycontainer" action="http://formspree.io/paulo.iza.v@gmail.com" method="post">
 				<h3>You're invited to our wedding! Please RSVP below!</h3><br>
 				<input class="hide" type="email" name="_replyto" value="paulo.iza.v@gmail.com">
-				<label for="fullname">Full Name:</label><input class="input" id="fullname" type="text" name="fullname" onchange="loadData(this.value)"><br><br>
+				<label for="fullname">Full Name:</label><input class="input" id="fullname" type="text" name="fullname" onchange="loadGuestList(this.value)"><br><br>
 				<label for="guestname">Guest Name:</label><input class="input" id="guestname" type="text" name="guestname"><br><br>
 				<div class="center">
 					<button class="submit" type="submit">Send RSVP</button>
