@@ -36,7 +36,7 @@
 			<form class="bodycontainer" action="http://formspree.io/paulo.iza.v@gmail.com" method="post">
 				<h3>You're invited to our wedding! Please RSVP below!</h3><br>
 				<input class="hide" type="email" name="_replyto" value="paulo.iza.v@gmail.com">
-				<label for="fullname">Full Name:</label><input class="input" id="fullname" type="text" name="fullname"><br><br>
+				<label for="fullname">Full Name:</label><input class="input" id="fullname" type="text" name="fullname" onchange="loadData(this.value)"><br><br>
 				<label for="guestname">Guest Name:</label><input class="input" id="guestname" type="text" name="guestname"><br><br>
 				<div class="center">
 					<button class="submit" type="submit">Send RSVP</button>
@@ -45,24 +45,4 @@
 		</section>
 	</body>
 </html>
-<script type="text/javascript">
-function myFunction() {
-    var x = document.getElementById("main_nav");
-    if (!x.style.display || x.style.display === "none") {
-        x.style.display = "flex";
-    } else {
-        x.style.display = "none";
-    }
-}
-function showInfo() {
-    var info = document.getElementById("info");
-    if (!info.style.display || info.style.display === "none") {
-        info.style.display = "block";
-    } else {
-        info.style.display = "none";
-    }
-}
-// document.querySelector("fullname").addEventListener("change",function () {
-//   document.getElementById("fullname").innerHTML = "Hello";
-// })
-</script>
+<script src="scripts.js"></script>

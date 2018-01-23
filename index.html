@@ -33,43 +33,6 @@
 			<h1>Paulo and Tiffany</h1>
 			<h2 class="subtitle fancy"><span>Sunday, August 19, 2018</span></h2>
 		</section>
-		<section>
-			<button type="button" onclick="loadData()">Load Spreadsheet Data</button>
-			<h5 id="display" value="Sheet1">Hello</h5>
-		</section>
 	</body>
 </html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript">
-function loadData() {
-  var url="https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:A101&output=csv";
-  xmlhttp=new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    document.getElementById("display").innerText = xmlhttp.responseText;
-  };
-  if ("withCredentials" in xmlhttp) {
-	xmlhttp.open("GET", url, true);
-  } 
-  if (typeof XDomainRequest != "undefined") {
-    xmlhttp = new XDomainRequest();
-    xmlhttp.open(method, url);
-  }
-  xmlhttp.send();
-}
-function myFunction() {
-    var x = document.getElementById("main_nav");
-    if (!x.style.display || x.style.display === "none") {
-        x.style.display = "flex";
-    } else {
-        x.style.display = "none";
-    }
-}
-function showInfo() {
-    var info = document.getElementById("info");
-    if (!info.style.display || info.style.display === "none") {
-        info.style.display = "block";
-    } else {
-        info.style.display = "none";
-    }
-}
-</script>
+<script src="scripts.js"></script>
