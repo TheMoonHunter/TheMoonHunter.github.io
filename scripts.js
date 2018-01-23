@@ -1,12 +1,9 @@
-var response;
-function loadData() {
+function loadData(name) {
   var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:A101&output=csv";
   xmlhttp = new XMLHttpRequest();
-  // xmlhttp.onreadystatechange = function() {
-  // 	var response = xmlhttp.responseText;
-  // 	var parsedResponse = removeHeader(response);
-  //   document.getElementById("fullname").innerText = parsedResponse;
-  // };
+  xmlhttp.onreadystatechange = function() {
+  	processResponse(name, xmlhttp.responseText);
+  };
   if ("withCredentials" in xmlhttp) {
 	xmlhttp.open("GET", url, true);
   }
@@ -15,10 +12,9 @@ function loadData() {
     xmlhttp.open(method, url);
   }
   xmlhttp.send();
-  response = xmlhttp.responseText;
 }
 
-function processResponse(name) {
+function processResponse(name, response) {
   response = JSON.parse(removeHeader(response));
   console.log(name);
   var isValid = validateName(response, name);
