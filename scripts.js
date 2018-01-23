@@ -1,19 +1,28 @@
+var response;
 function loadData() {
-  var url="https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:A101&output=csv";
-  xmlhttp=new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-  	var response = xmlhttp.responseText;
-  	var parsedResponse = removeHeader(response);
-    document.getElementById("display").innerText = parsedResponse;
-  };
+  var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:A101&output=csv";
+  xmlhttp = new XMLHttpRequest();
+  // xmlhttp.onreadystatechange = function() {
+  // 	var response = xmlhttp.responseText;
+  // 	var parsedResponse = removeHeader(response);
+  //   document.getElementById("fullname").innerText = parsedResponse;
+  // };
   if ("withCredentials" in xmlhttp) {
 	xmlhttp.open("GET", url, true);
-  } 
+  }
   if (typeof XDomainRequest != "undefined") {
     xmlhttp = new XDomainRequest();
     xmlhttp.open(method, url);
   }
   xmlhttp.send();
+  response = xmlhttp.responseText;
+}
+
+function processResponse(name) {
+  response = JSON.parse(removeHeader(response));
+  console.log(name);
+  var isValid = validateName(response, name);
+  document.getElementById("fullname").value = isValid;
 }
 
 function testLoadData(name) {
@@ -39,7 +48,7 @@ function validateName(data, searchName) {
 
 function removeHeader(response) {
 	response = response.replace("google.visualization.Query.setResponse(", "");
-	response = response.replace("\/\*O_o*\/", ""); 
+	response = response.replace("\/\*O_o*\/", "");
 	response = response.replace(");", "");
 	return response;
 }

@@ -8,7 +8,7 @@
 	<header>
 		<button onclick="myFunction()">Menu</button>
 	</header>
-	<body>
+	<body onload="loadData()">
 		<nav class="nav" id="main_nav">
 		  <ul>
 			  <li><a href="index.html">Home</a></li>
@@ -36,7 +36,7 @@
 			<form class="bodycontainer" action="http://formspree.io/paulo.iza.v@gmail.com" method="post">
 				<h3>You're invited to our wedding! Please RSVP below!</h3><br>
 				<input class="hide" type="email" name="_replyto" value="paulo.iza.v@gmail.com">
-				<label for="fullname">Full Name:</label><input class="input" id="fullname" type="text" name="fullname" onchange="loadData(this.value)"><br><br>
+				<label for="fullname">Full Name:</label><input class="input" id="fullname" type="text" name="fullname" onchange="processResponse(this.value)"><br><br>
 				<label for="guestname">Guest Name:</label><input class="input" id="guestname" type="text" name="guestname"><br><br>
 				<div class="center">
 					<button class="submit" type="submit">Send RSVP</button>
