@@ -278,6 +278,10 @@ body {
     background: rgba(255, 255, 255, .4);
   }
 
+  .bodycontainer#things-to-do {
+    height:600px;
+  }
+
   .nav {
     justify-content: center;
     width: 1200px;
@@ -399,6 +403,10 @@ h1 {
   font-size: 80px;
 }
 
+section.things-to-do {
+
+}
+
 h2 {
   color: #f5f5f5;
   font-family: 'Georgia', serif;
@@ -407,12 +415,21 @@ h2 {
   white-space: nowrap;
 }
 
+h2.things-to-do {
+  font-size: 25px;
+  color: #f66a5c;
+}
+
 h3 {
   color: #090a67;
   font-family: 'Georgia';
   text-align: center;
   padding: 10px 25px 10px 25px;
   text-align: justify;
+}
+
+h3.things-to-do {
+  text-align: center;
 }
 
 button.submit {
