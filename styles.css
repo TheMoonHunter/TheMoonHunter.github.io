@@ -411,7 +411,8 @@ h3 {
   color: #090a67;
   font-family: 'Georgia';
   text-align: center;
-  padding-top: 10px;
+  padding: 10px 25px 10px 25px;
+  text-align: justify;
 }
 
 button.submit {

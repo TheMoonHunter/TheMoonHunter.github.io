@@ -1,5 +1,5 @@
 function loadGuestList(name) {
-  var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:A113&output=csv";
+  var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:C113&output=csv";
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
   	processResponse(name, xmlhttp.responseText);
@@ -45,6 +45,7 @@ function removeHeader(response) {
 	response = response.replace(");", "");
 	return response;
 }
+
 function toggleDisplay(id) {
     var x = document.getElementById(id);
     if (!x.style.display || x.style.display === "none") {
