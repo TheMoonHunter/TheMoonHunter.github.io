@@ -14,6 +14,12 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
+
+  img {
+    height: 220px; 
+    width: 300px;
+  }
+
   body {
     width: 100%;
     float: none;
@@ -93,6 +99,10 @@ body {
 
   .bodycontainer#index {
     height: 360px;
+  }
+
+  .bodycontainer#our-story {
+    height: 940px;
   }
 
   .bodycontainer#things-to-do {
@@ -209,6 +219,11 @@ body {
 
 @media only screen and (min-width: 481px) {
 
+  img {
+    height: 360px; 
+    width: 480px;
+  }
+
   h1 {
     font-size: 90px;
     font-weight: 100;
@@ -288,6 +303,10 @@ body {
 
   .bodycontainer#index {
     height: 260px;
+  }
+
+  .bodycontainer#our-story {
+    height: 780px;
   }
 
   .bodycontainer#things-to-do {
