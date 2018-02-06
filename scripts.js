@@ -1,3 +1,57 @@
+var counter = 0;
+
+function createRadioButton(num) {
+  var radioButton = document.createElement('input');
+  radioButton.type = "radio";
+  radioButton.checked = false;
+
+  var id = document.createAttribute("id");
+  id.value = "radio_" + counter + "_" + num;
+  radioButton.setAttributeNode(id);
+
+  var onChange = document.createAttribute("onchange");
+  onChange.value = "valueChanged(this)";
+  radioButton.setAttributeNode(onChange);
+
+  return radioButton;
+}
+
+function loadGuests() {
+  var list = document.getElementById("extra");
+  // create div container to rsvp
+  var div = document.createElement("div");
+  div.className = "guest";
+
+  // setup rsvp form
+  var text = document.createElement("h5");
+  text.textContent = "Will you be attending?";
+  var radioButton1 = createRadioButton(1);
+  var radioButton2 = createRadioButton(2);
+  var linebreak = document.createElement("br");
+
+  // populate div
+  div.appendChild(text);
+  div.appendChild(radioButton1);
+  div.appendChild(radioButton2);
+  div.appendChild(linebreak);
+
+  list.append(div);
+  counter += 1;
+}
+
+function valueChanged(radio) {
+  var id = radio.id;
+  if (id[id.length -1] == "1") {
+    var id2 = id.slice(0, -1) + "2";
+  }
+  else {
+    var id2 = id.slice(0, -1) + "1";
+  }
+  if(document.getElementById(id).checked == true) {
+    document.getElementById(id2).checked = false;
+  }
+}
+
 function loadGuestList(name) {
   var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:C113&output=csv";
   xmlhttp = new XMLHttpRequest();

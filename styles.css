@@ -76,9 +76,9 @@ body {
   }
 
   input, label {
-      float: left;
-      padding-left: 5px;
-      font-size: 12px;
+    float: left;
+    padding-left: 5px;
+    font-size: 12px;
   }
 
   button.submit {
@@ -306,6 +306,24 @@ body {
     justify-content: center;
   }
 
+  .guests {
+    width: 870.67px;
+    height: auto;
+    text-align: center;
+    display: table-cell;
+    justify-content: center;
+  }
+
+  .guest {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
   #main_nav {
     display: flex;
   }
@@ -439,6 +457,16 @@ h3.index {
 
 h3.things-to-do {
   text-align: center;
+}
+
+h5 {
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  white-space: nowrap;
 }
 
 button.submit {
