@@ -1,9 +1,24 @@
 var counter = 0;
+var today = new Date();
+var weddingDay = new Date(today.getFullYear(), 7, 19);
+if (today.getMonth()==7 && today.getDate()>19) {
+  weddingDay.setFullYear(weddingDay.getFullYear() + 1); 
+}  
+var one_day= 1000 * 60 * 60 * 24;
+if (document.getElementById("daysToGo")) {
+  document.getElementById("daysToGo").innerHTML = Math.ceil((weddingDay.getTime()-today.getTime())/(one_day)) + " Days to go";
+}
 
 function createRadioButton(num) {
   var radioButton = document.createElement('input');
   radioButton.type = "radio";
   radioButton.checked = false;
+  if (num == 1) {
+    radioButton.value = "Yes";
+  }
+  if (num == 2) {
+    radioButton.value = "No";
+  }
 
   var id = document.createAttribute("id");
   id.value = "radio_" + counter + "_" + num;

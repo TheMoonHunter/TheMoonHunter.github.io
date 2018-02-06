@@ -41,7 +41,7 @@ body {
     padding: 5px 40px;
     margin-bottom: 10px;
     text-align: center;
-    background: gba(255, 255, 255, .6);
+    background: gba(255, 255, 255, .7);
     border-radius: 10px;
   }
 
@@ -94,7 +94,7 @@ body {
     height: auto;
     margin-right: 15px;
     text-align: center;
-    background: rgba(255, 255, 255, .4);
+    background: rgba(255, 255, 255, .7);
   }
 
   .section {
@@ -256,7 +256,7 @@ body {
     border: none;
     text-decoration: none;
     text-align: center;
-    background: gba(255, 255, 255, .6);
+    background: gba(255, 255, 255, .7);
     border-radius: 10px;
   }
 
@@ -287,7 +287,7 @@ body {
   .bodycontainer {
     width: 870.67px;
     height: auto;
-    background: rgba(255, 255, 255, .4);
+    background: rgba(255, 255, 255, .7);
   }
 
   .nav {
@@ -439,13 +439,14 @@ h2 {
 }
 
 h2.things-to-do {
-  font-size: 25px;
+  font-size: 30px;
   color: #f66a5c;
 }
 
 h3 {
   color: #090a67;
-  font-family: 'Georgia';
+  font-family: "Lucida Console";
+  font-weight: normal;
   text-align: center;
   padding: 10px 25px 10px 25px;
   text-align: justify;
@@ -453,9 +454,11 @@ h3 {
 
 h3.index {
   font-size: 15px;
+  text-align: center;
 }
 
 h3.things-to-do {
+  font-size: 20px;
   text-align: center;
 }
 
@@ -467,6 +470,16 @@ h5 {
   margin-right: auto;
   width: 300px;
   white-space: nowrap;
+}
+
+#bold {
+  font-weight: bold;
+}
+
+#description {
+  font-family: "Lucida Console";
+  font-weight: normal;
+  font-size: 17px;
 }
 
 button.submit {
@@ -489,7 +502,7 @@ button.submit {
 ul li {
   list-style: none;
   position: relative;
-  background: rgba(255, 255, 255, .4);
+  background: rgba(255, 255, 255, .7);
   text-align: center;
 }
 
