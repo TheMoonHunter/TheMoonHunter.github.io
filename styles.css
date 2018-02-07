@@ -21,11 +21,19 @@ body {
   }
 
   img.registry {
-    height: 90px;
-    width: 120px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
+  }
+
+  img#travelersjoy {
+    height: 90px;
+    width: 130px;
+  }
+
+  img#bedbathbeyond {
+    height: 90px;
+    width: 150px;
   }
 
   body {
