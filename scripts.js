@@ -9,6 +9,21 @@ if (document.getElementById("daysToGo")) {
   document.getElementById("daysToGo").innerHTML = Math.ceil((weddingDay.getTime()-today.getTime())/(one_day)) + " Days to go";
 }
 
+function scaleImage(image) {
+  var modal = document.getElementById('myModal');
+  var modalImg = document.getElementById("image");
+  var captionText = document.getElementById("caption");
+
+  modal.style.display = "block";
+  modalImg.src = image.src;
+  captionText.innerHTML = image.alt;
+
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+}
+
 function createRadioButton(num) {
   var radioButton = document.createElement('input');
   radioButton.type = "radio";
