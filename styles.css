@@ -22,8 +22,8 @@ body {
 
   img.photos-landscape {
     margin: 20px 10px 10px 20px;
-    width: 75px;
-    height: 50px;
+    width: 170px;
+    height: 130px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -31,8 +31,8 @@ body {
 
   img.photos-portrait {
     margin: 20px 10px 10px 20px;
-    width: 35px;
-    height: 50px;
+    width: 105px;
+    height: 130px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
