@@ -16,7 +16,7 @@ body {
 @media only screen and (max-width: 480px) {
 
   img.our-story {
-    height: 220px; 
+    height: 220px;
     width: 300px;
   }
 
@@ -314,7 +314,7 @@ body {
 @media only screen and (min-width: 481px) {
 
   img.our-story {
-    height: 360px; 
+    height: 360px;
     width: 480px;
   }
 
@@ -660,7 +660,7 @@ h2.things-to-do {
 
 h3 {
   color: #090a67;
-  font-family: "Lucida Console";
+  font-family: "Georgia";
   font-weight: normal;
   text-align: center;
   padding: 10px 25px 10px 25px;
@@ -698,7 +698,7 @@ h5 {
 }
 
 #description {
-  font-family: "Lucida Console";
+  font-family: "Georgia";
   font-weight: normal;
   font-size: 17px;
 }
