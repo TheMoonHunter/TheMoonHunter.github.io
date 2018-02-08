@@ -166,8 +166,21 @@ body {
     padding-left: 10px;
   }
 
+  h2.things-to-do {
+    font-size: 20px;
+  }
+
   h3 {
     font-size: 16px;
+  }
+
+  h3.things-to-do {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  h3.index {
+    font-size: 14px;
   }
 
   label {
@@ -447,6 +460,18 @@ body {
     padding-left: 20px;
   }
 
+  h2.things-to-do {
+    font-size: 30px;
+  }
+
+  h3.things-to-do {
+    font-size: 20px;
+  }
+
+  h3.index {
+    font-size: 18px;
+  }
+
   label {
     width: 345px;
     clear: left;
@@ -654,7 +679,6 @@ h2 {
 }
 
 h2.things-to-do {
-  font-size: 30px;
   color: #f66a5c;
 }
 
@@ -678,12 +702,10 @@ h3#address {
 }
 
 h3.index {
-  font-size: 15px;
   text-align: center;
 }
 
 h3.things-to-do {
-  font-size: 20px;
   text-align: center;
 }
 
@@ -700,7 +722,6 @@ h5 {
 #description {
   font-family: "Georgia";
   font-weight: normal;
-  font-size: 17px;
 }
 
 button.submit {
