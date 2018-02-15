@@ -1,4 +1,4 @@
-var counter = 0;
+var counter = 1;
 var today = new Date();
 var weddingDay = new Date(today.getFullYear(), 7, 19);
 if (today.getMonth()==7 && today.getDate()>19) {
@@ -7,6 +7,19 @@ if (today.getMonth()==7 && today.getDate()>19) {
 var one_day= 1000 * 60 * 60 * 24;
 if (document.getElementById("daysToGo")) {
   document.getElementById("daysToGo").innerHTML = Math.ceil((weddingDay.getTime()-today.getTime())/(one_day)) + " Days to go";
+}
+
+function loadInvite() {
+  document.getElementById("loadInvite").style.display = "none";
+  document.getElementById("loader").style.display = "flex";
+  document.getElementById("fullname").disabled = true;
+  myVar = setTimeout(removeExtraElements, 700);
+}
+
+function removeExtraElements() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("submit").style.display = "flex";
+  document.getElementById("animate-bottom").style.display = "block";
 }
 
 function scaleImage(image) {
@@ -35,10 +48,17 @@ function createRadioButton(num) {
     radioButton.value = "No";
   }
 
+  // Add the class attribute
+  var radio_class = document.createAttribute("class");
+  radio_class.value = "radio";
+  radioButton.setAttributeNode(radio_class);
+
+  // Add the id attribute
   var id = document.createAttribute("id");
   id.value = "radio_" + counter + "_" + num;
   radioButton.setAttributeNode(id);
 
+  // Add the onchange attribute
   var onChange = document.createAttribute("onchange");
   onChange.value = "valueChanged(this)";
   radioButton.setAttributeNode(onChange);
@@ -46,27 +66,38 @@ function createRadioButton(num) {
   return radioButton;
 }
 
-function loadGuests() {
-  var list = document.getElementById("extra");
-  // create div container to rsvp
-  var div = document.createElement("div");
-  div.className = "guest";
+function loadAcceptRegret() {
+  var div = document.getElementById("animate-bottom");
+  var text = document.createElement("label");
+  text.textContent = "Accept             Regret";
 
-  // setup rsvp form
-  var text = document.createElement("h5");
-  text.textContent = "Will you be attending?";
+  var text_class = document.createAttribute("class");
+  text_class.value = "right-side";
+  text.setAttributeNode(text_class);
+  div.appendChild(text);
+  div = addBreakLines(div);
+}
+
+function loadGuest(guest) {
+  var div = document.getElementById("animate-bottom");
+  var text = document.createElement("label");
+  text.textContent = "Will " + guest + " be able to attend?";
   var radioButton1 = createRadioButton(1);
   var radioButton2 = createRadioButton(2);
-  var linebreak = document.createElement("br");
 
   // populate div
   div.appendChild(text);
   div.appendChild(radioButton1);
   div.appendChild(radioButton2);
-  div.appendChild(linebreak);
+  div = addBreakLines(div);
 
-  list.append(div);
   counter += 1;
+}
+
+function addBreakLines(div) {
+  div.appendChild(document.createElement("br"));
+  div.appendChild(document.createElement("br"));
+  return div;
 }
 
 function valueChanged(radio) {
@@ -99,12 +130,25 @@ function loadGuestList(name) {
 }
 
 function processResponse(name, response) {
+  var myNode = document.getElementById("animate-bottom");
+  while (myNode.firstChild) {
+    myNode.removeChild(myNode.firstChild);
+  }
   if (name) {
-    response = JSON.parse(removeHeader(response));
-    var guests = validateName(response, name);
-    document.getElementById("fullname").value = isValid;
-    if (guests) {
-      // Programmatically add Guest Names and Radio buttons for RSVP.
+    //response = JSON.parse(removeHeader(response));
+    var guests = ['John Smith', 'Jane Doe']//validateName(response, name);
+    guests.unshift('you');
+    if (Array.isArray(guests)) {
+      loadAcceptRegret();
+      for (x in guests) {
+        loadGuest(guests[x]);
+      }
+    }
+    if ((typeof guests) == "string") {
+      console.log("it's a string!");
+    }
+    if (!guests && !Array.isArray(guests)) {
+      console.log("it's a null!");
     }
   }
 }

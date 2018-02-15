@@ -203,7 +203,7 @@ body {
     margin-top: 20px;
     padding-left: 10px;
     width: 100px;
-    height: 35px;
+    height: auto;
     white-space: nowrap;
   }
 
@@ -422,6 +422,46 @@ body {
       to {transform:scale(1)}
   }
 
+  #loader {
+    margin: 15px auto 20px auto;
+    width: 50px;
+    height: 50px;
+    border: 7px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 7px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Add animation to "page content" */
+  #animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+
+  @-webkit-keyframes animatebottom {
+    from { bottom:-50px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+
+  @keyframes animatebottom { 
+    from{ bottom:-50px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+
   /* The Close Button */
   .close {
       position: absolute;
@@ -476,8 +516,21 @@ body {
     width: 345px;
     clear: left;
     text-align: right;
+    margin-left: 80px;
     padding-right: 10px;
     margin-top: 2px;
+    font-size: 19px;
+  }
+
+  label.right-side {
+    font-size: 19px;
+    margin-left: 290px;
+    white-space: pre;
+  }
+
+  input.radio {
+    margin-left: 55px;
+    margin-right: 45px;
   }
 
   input, label {
@@ -500,9 +553,14 @@ body {
   }
 
   button.submit {
-    width: 130px;
-    height: 35px;
+    width: auto;
+    height: auto;
     margin-top: 40px;
+    padding: 5px 5px 5px 5px;
+  }
+
+  button.submit:hover {
+    background-color: #f66a5c;
   }
 
   .container {
@@ -709,14 +767,10 @@ h3.things-to-do {
   text-align: center;
 }
 
-h5 {
-  font-size: 15px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
-  white-space: nowrap;
+.bodycontainer:after {
+  clear: both;
+  content: "";
+  display: flex;
 }
 
 #description {
