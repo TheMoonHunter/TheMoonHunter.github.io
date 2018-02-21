@@ -107,6 +107,27 @@ body {
       to {transform:scale(1)}
   }
 
+  #loader {
+    margin: 15px auto 20px auto;
+    width: 25px;
+    height: 25px;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
   /* The Close Button */
   .close {
       position: absolute;
@@ -184,13 +205,26 @@ body {
   }
 
   label {
-    width: 30%;
+    width: 170px;
     clear: left;
     text-align: right;
     padding-right: 5px;
-    white-space: nowrap;
     margin-top: 4px;
     height: 20px;
+  }
+
+  label#first-and-last {
+    width: 35%;
+  }
+
+  label.right-side {
+    margin-left: 130px;
+    white-space: pre;
+  }
+
+  input.radio {
+    margin-left: 30px;
+    margin-right: 25px;
   }
 
   input, label {
@@ -201,10 +235,6 @@ body {
 
   button.submit {
     margin-top: 20px;
-    padding-left: 10px;
-    width: 100px;
-    height: auto;
-    white-space: nowrap;
   }
 
   .bodycontainer {
@@ -553,14 +583,7 @@ body {
   }
 
   button.submit {
-    width: auto;
-    height: auto;
     margin-top: 40px;
-    padding: 5px 5px 5px 5px;
-  }
-
-  button.submit:hover {
-    background-color: #f66a5c;
   }
 
   .container {
@@ -781,6 +804,13 @@ h3.things-to-do {
 button.submit {
   background-color: #090a67;
   color: #f5f5f5;
+  padding-left: 5px 5px 5px 5px;
+  width: auto;
+  height: auto;
+}
+
+button.submit:hover {
+  background-color: #f66a5c;
 }
 
 .nav {
