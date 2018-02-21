@@ -97,8 +97,8 @@ function loadGuest(guest) {
   var div = document.getElementById("animate-bottom");
   var text = document.createElement("label");
   text.textContent = "Will " + guest + " be able to attend?";
-  var radioButton1 = createRadioButton(1);
-  var radioButton2 = createRadioButton(2);
+  var radioButton1 = createRadioButton(1, guest);
+  var radioButton2 = createRadioButton(2, guest);
 
   // populate div
   div.appendChild(text);
