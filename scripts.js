@@ -18,10 +18,14 @@ function loadInvite() {
   myVar = setTimeout(loadGuestList, 700, document.getElementById("fullname").value);
 }
 
+function disableSubmitButton() {
+  document.getElementById("submit").disabled = true;
+}
+
 function removeExtraElements() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("submit").style.display = "flex";
-  document.getElementById("submit").removeAttribute("disabled");
+  document.getElementById("submit").disabled = false;
   document.getElementById("animate-bottom").style.display = "block";
 }
 
@@ -31,6 +35,7 @@ function goBack() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("loadInvite").style.display = "flex";
   document.getElementById("submit").style.display = "none";
+  disableSubmitButton();
 }
 
 function scaleImage(image) {

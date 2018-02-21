@@ -8,7 +8,7 @@
 	<header>
 		<button onclick="toggleDisplay(`main_nav`)">Menu</button>
 	</header>
-	<body>
+	<body onload="disableSubmitButton()">
 		<nav class="nav" id="main_nav">
 		  <ul>
 			  <li><a href="index.html">Home</a></li>
@@ -38,7 +38,7 @@
 						<button class="submit" id="findInvite" type="button" onclick="loadInvite()">Find my Invite</button>
 					</div>
 					<div style="display: none;" class="center" id="submit">
-						<button class="submit" id="sendRSVP" type="submit" disabled>Send RSVP</button>
+						<button class="submit" id="sendRSVP" type="submit">Send RSVP</button>
 					</div>
 				</form>
 				<div style="display: none;" id="loader"></div>
