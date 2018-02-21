@@ -71,9 +71,9 @@ function createRadioButton(num, name) {
   radioButton.setAttributeNode(id);
 
   // Add the onchange attribute
-  var onChange = document.createAttribute("onchange");
-  onChange.value = "valueChanged(this)";
-  radioButton.setAttributeNode(onChange);
+  // var onChange = document.createAttribute("onchange");
+  // onChange.value = "valueChanged(this)";
+  // radioButton.setAttributeNode(onChange);
 
   return radioButton;
 }
@@ -110,18 +110,18 @@ function addBreakLines(div) {
   return div;
 }
 
-function valueChanged(radio) {
-  var id = radio.id;
-  if (id[id.length -1] == "1") {
-    var id2 = id.slice(0, -1) + "2";
-  }
-  else {
-    var id2 = id.slice(0, -1) + "1";
-  }
-  if(document.getElementById(id).checked == true) {
-    document.getElementById(id2).checked = false;
-  }
-}
+// function valueChanged(radio) {
+//   var id = radio.id;
+//   if (id[id.length -1] == "1") {
+//     var id2 = id.slice(0, -1) + "2";
+//   }
+//   else {
+//     var id2 = id.slice(0, -1) + "1";
+//   }
+//   if(document.getElementById(id).checked == true) {
+//     document.getElementById(id2).checked = false;
+//   }
+// }
 
 function loadGuestList(name) {
   var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:C113&output=csv";
