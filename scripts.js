@@ -151,6 +151,7 @@ function loadSongRequest() {
   div = addBreakLines(div);
   div.appendChild(artist_label);
   div.appendChild(artist_input);
+  div.appendChild(name_input);
   div = addBreakLines(div);
 }
 
