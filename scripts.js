@@ -151,6 +151,7 @@ function processResponse(name, response) {
   if (name) {
     response = JSON.parse(removeHeader(response));
     var guests = validateName(response, name); //['John Smith', 'Jane Doe'];
+    console.log(typeof guests);
     if (Array.isArray(guests)) {
       guests.unshift('you');
       loadAcceptRegret();
@@ -179,6 +180,7 @@ function validateName(data, searchName) {
     var guests = rows[i].c[1].v;
     var rsvp = rows[i].c[2].v;
 		if (name.includes(searchName) && rsvp.includes("?")) {
+      console.log(typeof guests);
 			return guests.split(",");
 		}
     if (name.includes(searchName) && (rsvp.includes("Y") || rsvp.includes("N"))) {
