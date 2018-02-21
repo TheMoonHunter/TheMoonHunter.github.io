@@ -1,4 +1,6 @@
 var counter = 1;
+var processed = false;
+
 var today = new Date();
 var weddingDay = new Date(today.getFullYear(), 7, 19);
 if (today.getMonth()==7 && today.getDate()>19) {
@@ -13,13 +15,21 @@ function loadInvite() {
   document.getElementById("loadInvite").style.display = "none";
   document.getElementById("loader").style.display = "flex";
   document.getElementById("fullname").disabled = true;
-  myVar = setTimeout(removeExtraElements, 700);
+  myVar = setTimeout(loadGuestList, 700, document.getElementById("fullname").value);
 }
 
 function removeExtraElements() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("submit").style.display = "flex";
   document.getElementById("animate-bottom").style.display = "block";
+}
+
+function goBack() {
+  document.getElementById("animate-bottom").style.display = "none";
+  document.getElementById("fullname").disabled = false;
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("loadInvite").style.display = "flex";
+  document.getElementById("submit").style.display = "none";
 }
 
 function scaleImage(image) {
@@ -130,27 +140,35 @@ function loadGuestList(name) {
 }
 
 function processResponse(name, response) {
+  if (processed) {
+    processed = false;
+    return;
+  }
   var myNode = document.getElementById("animate-bottom");
   while (myNode.firstChild) {
     myNode.removeChild(myNode.firstChild);
   }
   if (name) {
-    //response = JSON.parse(removeHeader(response));
-    var guests = ['John Smith', 'Jane Doe']//validateName(response, name);
-    guests.unshift('you');
+    response = JSON.parse(removeHeader(response));
+    var guests = validateName(response, name); //['John Smith', 'Jane Doe'];
     if (Array.isArray(guests)) {
+      guests.unshift('you');
       loadAcceptRegret();
       for (x in guests) {
         loadGuest(guests[x]);
+        removeExtraElements();
       }
     }
-    if ((typeof guests) == "string") {
-      console.log("it's a string!");
+    if (guests == null) {
+      alert("Guests are null!");
+      goBack();
     }
-    if (!guests && !Array.isArray(guests)) {
-      console.log("it's a null!");
+    else {
+      alert(guests);
+      goBack();
     }
   }
+  processed = true;
 }
 
 function validateName(data, searchName) {
@@ -163,6 +181,9 @@ function validateName(data, searchName) {
 		if (name.includes(searchName) && rsvp.includes("?")) {
 			return guests.split(",");
 		}
+    if (name.includes(searchName) && (rsvp.includes("Y") || rsvp.includes("N"))) {
+      return "You have already RSVP'd. If you need to change your RSVP, please contact us directly.";
+    }
 	}
 	return null;
 }
