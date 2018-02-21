@@ -25,8 +25,24 @@
 			<h1>Song Requests</h1>
 			<h2 class="subtitle nofancy"><span></span></h2>
 		</section>
-		<section class="container">
-			<h2 class='coming-soon'>Coming Soon . . .</h2>
+		<section class="section">
+			<div class="bodycontainer">
+				<form onkeypress="return event.keyCode != 13;" id="song-requests-form" action="http://formspree.io/paulo.iza.v@gmail.com" method="post">
+					<h3 class="things-to-do">Tell us what songs you'd like to dance to at our wedding!</h3><br>
+					<input class="hide" type="email" name="_replyto" value="paulo.iza.v@gmail.com">
+					<label id="first-and-last" for="full_name">First and Last Name:</label><input class="input" id="fullname" type="text" name="full_name">
+					<br><br>
+					<div style="display: none;" class="guests" id="animate-bottom">
+					</div>
+					<div class="center" id="loadInvite">
+						<button class="submit" id="findInvite" type="button" onclick="loadInvite()">Validate Name</button>
+					</div>
+					<div style="display: none;" class="center" id="submit">
+						<button class="submit" id="sendRSVP" type="submit">Send Song Request</button>
+					</div>
+				</form>
+				<div style="display: none;" id="loader"></div>
+			</div>
 		</section>
 	</body>
 </html>

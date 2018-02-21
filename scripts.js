@@ -99,6 +99,54 @@ function loadGuest(guest) {
   div = addBreakLines(div);
 }
 
+function createInputText(name) {
+  var inputText = document.createElement('input');
+  inputText.type = "text";
+
+  // Add the class attribute
+  var input_class = document.createAttribute("class");
+  input_class.value = "input";
+  inputText.setAttributeNode(input_class);
+
+  // Add the id attribute
+  var id = document.createAttribute("name");
+  id.value = name;
+  inputText.setAttributeNode(id);
+
+  return inputText;
+}
+
+function createInputLabel(name) {
+  var label = document.createElement("label");
+  label.textContent = name.charAt(0).toUpperCase() + name.slice(1) + ":";
+
+  var label_id = document.createAttribute("id");
+  label_id.value = "first-and-last";
+  label.setAttributeNode(label_id);
+
+  var label_for = document.createAttribute("name");
+  label_for.value = name;
+  label.setAttributeNode(label_for);
+
+  return label;
+}
+
+function loadSongRequest() {
+  var div = document.getElementById("animate-bottom");
+
+  var song_label = createInputLabel("song");
+  var artist_label = createInputLabel("artist");
+  var song_input = createInputText("song");
+  var artist_input = createInputText("artist");
+
+  div.appendChild(song_label);
+  div.appendChild(song_input);
+  div = addBreakLines(div);
+  div.appendChild(artist_label);
+  div.appendChild(artist_input);
+  div = addBreakLines(div);
+}
+
 function addBreakLines(div) {
   div.appendChild(document.createElement("br"));
   div.appendChild(document.createElement("br"));
@@ -138,26 +186,46 @@ function processResponse(name, response) {
       return;
     }
     var guests = validateName(response, name); //['John Smith', 'Jane Doe'];
-    if (Array.isArray(guests)) {
-      guests.unshift('you');
-      loadAcceptRegret();
-      for (x in guests) {
-        if (guests[x] != "No Guest") {
-          loadGuest(guests[x]);
-        }
-      }
-      removeExtraElements();
+    if (document.getElementById("rsvp-form")) {
+      populateRSVPForm(guests);
     }
-    else if (guests == null) {
-      alert("Your name did not come up in our guest list.");
-      goBack();
-    }
-    else {
-      alert(guests);
-      goBack();
+    if (document.getElementById("song-requests-form")) {
+      populateSongRequestForm(guests);
     }
   }
   processed = true;
+}
+
+function populateRSVPForm(guests) {
+  if (Array.isArray(guests)) {
+    guests.unshift('you');
+    loadAcceptRegret();
+    for (x in guests) {
+      if (guests[x] != "No Guest") {
+        loadGuest(guests[x]);
+      }
+    }
+    removeExtraElements();
+  }
+  else if (guests == null) {
+    alert("Your name did not come up in our guest list.");
+    goBack();
+  }
+  else {
+    alert(guests);
+    goBack();
+  }
+}
+
+function populateSongRequestForm(response) {
+  if (response) {
+    loadSongRequest();
+    removeExtraElements();
+  }
+  else {
+    alert("You're not allowed to request a song because your name did not come up in our guest list. Sorry! :(")
+    goBack();
+  }
 }
 
 function validateName(data, searchName) {
