@@ -70,6 +70,9 @@ function createRadioButton(num, name) {
 
   // Add the id attribute
   var id = document.createAttribute("name");
+  if (name == "you") {
+    name = document.getElementById("fullname").value;
+  }
   id.value = name.replace(' ', '_').toLowerCase();
   radioButton.setAttributeNode(id);
 
