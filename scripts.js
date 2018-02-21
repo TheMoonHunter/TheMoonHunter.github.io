@@ -70,7 +70,7 @@ function createRadioButton(num) {
   radioButton.setAttributeNode(radio_class);
 
   // Add the id attribute
-  var id = document.createAttribute("id");
+  var id = document.createAttribute("name");
   id.value = "radio_" + counter + "_" + num;
   radioButton.setAttributeNode(id);
 
