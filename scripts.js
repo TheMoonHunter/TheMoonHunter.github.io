@@ -21,7 +21,7 @@ function loadInvite() {
 function removeExtraElements() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("submit").style.display = "flex";
-  document.getElementById("submit").disabled = false;
+  document.getElementById("submit").removeAttribute("disabled");
   document.getElementById("animate-bottom").style.display = "block";
 }
 
