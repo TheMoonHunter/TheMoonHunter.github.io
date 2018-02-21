@@ -4,8 +4,8 @@ var processed = false;
 var today = new Date();
 var weddingDay = new Date(today.getFullYear(), 7, 19);
 if (today.getMonth()==7 && today.getDate()>19) {
-  weddingDay.setFullYear(weddingDay.getFullYear() + 1); 
-}  
+  weddingDay.setFullYear(weddingDay.getFullYear() + 1);
+}
 var one_day= 1000 * 60 * 60 * 24;
 if (document.getElementById("daysToGo")) {
   document.getElementById("daysToGo").innerHTML = Math.ceil((weddingDay.getTime()-today.getTime())/(one_day)) + " Days to go";
@@ -151,8 +151,6 @@ function processResponse(name, response) {
   if (name) {
     response = JSON.parse(removeHeader(response));
     var guests = validateName(response, name); //['John Smith', 'Jane Doe'];
-    console.log(typeof guests);
-    console.log(guests);
     if (Array.isArray(guests)) {
       guests.unshift('you');
       loadAcceptRegret();
@@ -161,7 +159,7 @@ function processResponse(name, response) {
         removeExtraElements();
       }
     }
-    if (guests == null) {
+    else if (guests == null) {
       alert("Guests are null!");
       goBack();
     }
@@ -181,8 +179,6 @@ function validateName(data, searchName) {
     var guests = rows[i].c[1].v;
     var rsvp = rows[i].c[2].v;
 		if (name.includes(searchName) && rsvp.includes("?")) {
-      console.log(typeof guests);
-      console.log(guests);
 			return guests.split(",");
 		}
     if (name.includes(searchName) && (rsvp.includes("Y") || rsvp.includes("N"))) {
