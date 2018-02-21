@@ -116,7 +116,11 @@ function createInputText(name) {
   if (name == "name") {
     var name = document.createAttribute("style"); 
     name.value = "display: none;"
-    inputText.setAttributeNode(name);    
+    inputText.setAttributeNode(name);
+
+    var value = document.createAttribute("value");
+    value.value = document.getElementById("full_name").value;
+    inputText.setAttributeNode(value);
   }
 
   return inputText;
