@@ -113,6 +113,12 @@ function createInputText(name) {
   id.value = name;
   inputText.setAttributeNode(id);
 
+  if (name == "name") {
+    var name = document.createAttribute("style"); 
+    name.value = "display: none;"
+    inputText.setAttributeNode(name);    
+  }
+
   return inputText;
 }
 
@@ -134,6 +140,7 @@ function createInputLabel(name) {
 function loadSongRequest() {
   var div = document.getElementById("animate-bottom");
 
+  var name_input = createInputText("name");
   var song_label = createInputLabel("song");
   var artist_label = createInputLabel("artist");
   var song_input = createInputText("song");
