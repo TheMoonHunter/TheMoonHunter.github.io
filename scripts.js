@@ -149,18 +149,25 @@ function processResponse(name, response) {
     myNode.removeChild(myNode.firstChild);
   }
   if (name) {
-    response = JSON.parse(removeHeader(response));
+    try {
+      response = JSON.parse(removeHeader(response));
+    }
+    catch(err) {
+      return;
+    }
     var guests = validateName(response, name); //['John Smith', 'Jane Doe'];
     if (Array.isArray(guests)) {
       guests.unshift('you');
       loadAcceptRegret();
       for (x in guests) {
-        loadGuest(guests[x]);
-        removeExtraElements();
+        if (guests[x] != "No Guest") {
+          loadGuest(guests[x]);
+        }
       }
+      removeExtraElements();
     }
     else if (guests == null) {
-      alert("Guests are null!");
+      alert("Your name did not come up in our guest list.");
       goBack();
     }
     else {
@@ -172,7 +179,6 @@ function processResponse(name, response) {
 }
 
 function validateName(data, searchName) {
-	var response = "";
 	var rows = data.table.rows;
 	for (i = 0; i < rows.length; i++) {
 		var name = rows[i].c[0].v;
