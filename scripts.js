@@ -1,4 +1,3 @@
-var counter = 1;
 var processed = false;
 
 var today = new Date();
@@ -53,7 +52,7 @@ function scaleImage(image) {
   }
 }
 
-function createRadioButton(num) {
+function createRadioButton(num, name) {
   var radioButton = document.createElement('input');
   radioButton.type = "radio";
   radioButton.checked = false;
@@ -71,7 +70,7 @@ function createRadioButton(num) {
 
   // Add the id attribute
   var id = document.createAttribute("name");
-  id.value = "radio_" + counter + "_" + num;
+  id.value = name.replace(' ', '_').toLowerCase();
   radioButton.setAttributeNode(id);
 
   // Add the onchange attribute
@@ -106,8 +105,6 @@ function loadGuest(guest) {
   div.appendChild(radioButton1);
   div.appendChild(radioButton2);
   div = addBreakLines(div);
-
-  counter += 1;
 }
 
 function addBreakLines(div) {
