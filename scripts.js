@@ -114,7 +114,7 @@ function createInputText(name) {
   inputText.setAttributeNode(id);
 
   if (name == "name") {
-    var name = document.createAttribute("style"); 
+    var name = document.createAttribute("style");
     name.value = "display: none;"
     inputText.setAttributeNode(name);
 
@@ -166,7 +166,7 @@ function addBreakLines(div) {
 }
 
 function loadGuestList(name) {
-  var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:C113&output=csv";
+  var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:C129&output=csv";
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
   	processResponse(name, xmlhttp.responseText);
