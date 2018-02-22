@@ -119,7 +119,7 @@ function createInputText(name) {
     inputText.setAttributeNode(name);
 
     var value = document.createAttribute("value");
-    value.value = document.getElementById("full_name").value;
+    value.value = document.getElementById("fullname").value;
     inputText.setAttributeNode(value);
   }
 
