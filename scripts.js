@@ -166,7 +166,7 @@ function addBreakLines(div) {
 }
 
 function loadGuestList(name) {
-  var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:C129&output=csv";
+  var url = "https://docs.google.com/spreadsheet/tq?key=1J8RJDTBbcRmXOZHzFHLaEFcUGjGaEFXSTabXV8HYqjY&single=true&gid=0&range=A2:C133&output=csv";
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
   	processResponse(name, xmlhttp.responseText);
