@@ -242,8 +242,9 @@ function populateSongRequestForm(response) {
 
 function validateName(data, searchName) {
 	var rows = data.table.rows;
+  searchName = processString(searchName);
 	for (i = 0; i < rows.length; i++) {
-		var name = rows[i].c[0].v;
+		var name = processString(rows[i].c[0].v);
     var guests = rows[i].c[1].v;
     var rsvp = rows[i].c[2].v;
 		if (name == (searchName) && rsvp.includes("?")) {
@@ -254,6 +255,11 @@ function validateName(data, searchName) {
     }
 	}
 	return null;
+}
+
+function processString(str) {
+  str = str.trim();
+  return str.toLowerCase();
 }
 
 function removeHeader(response) {
