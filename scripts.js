@@ -1,13 +1,10 @@
 var processed = false;
 
 var today = new Date();
-var weddingDay = new Date(today.getFullYear(), 7, 19);
-if (today.getMonth()==7 && today.getDate()>19) {
-  weddingDay.setFullYear(weddingDay.getFullYear() + 1);
-}
+var weddingDay = new Date(2018, 7, 20);
 var one_day= 1000 * 60 * 60 * 24;
 if (document.getElementById("daysToGo")) {
-  document.getElementById("daysToGo").innerHTML = Math.ceil((weddingDay.getTime()-today.getTime())/(one_day)) + " Days to go";
+  document.getElementById("daysToGo").innerHTML = "Day " + Math.ceil((today.getTime()-weddingDay.getTime())/(one_day)) + " of Happily Ever After";
 }
 
 function loadInvite() {
